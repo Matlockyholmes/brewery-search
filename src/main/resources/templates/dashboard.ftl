@@ -16,11 +16,25 @@
     <p class="blue-text my-4">A powerfull brewery search engine powered by Elasticsearch</p>
     <hr class="my-4" />
     <div class="pt-2">
-      <form>
-        <button class="btn btn-outline-primary waves-effect">Import breweries <i class="fas fa-download ml-1"></i></button>
+      <form action="/import" method="post">
+        <button type="submit" class="btn btn-outline-primary waves-effect">Import breweries <i class="fas fa-download ml-1"></i></button>
       </form>
     </div>
   </div>
+  <#if status?hasContent>
+    <div class="container">
+      <i class="far fa-check-circle text-success"></i>
+      <strong class="mr-auto text-success">${status!}</strong>
+      <div class="font-weight-lighter font-italic">83 breweries were imported</div>
+    </div>
+  </#if>
+  <#if indexcheck?hasContent>
+    <div class="container">
+      <i class="far fa-check-circle text-success"></i>
+      <strong class="mr-auto text-success">${indexcheck!}</strong>
+      <div class="font-weight-lighter font-italic">Index succesvol</div>
+    </div>
+  </#if>
   <div class="container">
     <form>
       <div class="form-row">
